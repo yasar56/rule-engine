@@ -49,8 +49,8 @@ Make sure you have the following installed:
    ```
 
 2. **Backend Setup:**
-   ```bash
    Navigate to the backend folder and install dependencies:
+   ```bash
    cd backend
    npm install
    ```
