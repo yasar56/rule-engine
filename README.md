@@ -20,7 +20,7 @@ A **Rule Engine** application that allows you to define and evaluate rules again
 - Evaluate rules against dynamic user data and return the result.
 - Combine multiple rules for efficient evaluation.
 - Store rules and their ASTs in a MongoDB database.
-- RESTful API for creating, retrieving, and evaluating rules.
+- Axios API for creating, retrieving, and evaluating rules.
 - Frontend UI (using React) to manage rules and user data.
 
 ## Technologies
@@ -52,7 +52,7 @@ Make sure you have the following installed:
    Navigate to the backend folder and install dependencies:
    ```bash
    cd backend
-   npm install
+   npm install express body-parser mongoose cors
    ```
 3. **Frontend Setup:**
 
@@ -75,3 +75,41 @@ Make sure you have the following installed:
    cd rule-engine
    npm start
    ```
+
+### Usage
+
+- **Create a rule**: Define and save rules using a logical expression.
+- **Evaluate rules**: Evaluate user data against defined rules and get eligibility results.
+
+
+## Directory Structure
+
+    rule-engine/
+    ├── backend/
+    │   ├── models/
+    │   │    ├──Rule.js
+    │   │    └──User.js 
+    │   ├── node_module
+    │   ├── routes/
+    │   │   └── rules.js
+    │   │──app.js
+    │   │──package.json
+    │   ├──package-lock.json 
+    src/
+    ├── components/
+    │   ├── RuleEvaluator.js
+    │   └── RuleForm.jsx.js
+    ├── App.js
+    ├── index.js
+    ├── index.css
+    └── App.css
+
+
+### Contributing
+Feel free to contribute to the project:
+
+- Fork the repository.
+- Create a feature branch (git checkout -b feature-branch).
+- Make changes and commit (git commit -m 'Add feature').
+- Push to the branch (git push origin feature-branch).
+- Open a Pull Request.
