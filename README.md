@@ -54,11 +54,20 @@ Make sure you have the following installed:
    cd backend
    npm install express body-parser mongoose cors
    ```
-4. **Running MongoDB in Docker without Authentication**
-    Pull and run the MongoDB Docker image:
+3. **Running MongoDB in Docker without Authentication:**
+
+   To pull the latest MongoDB image from Docker Hub, run the following command in your terminal:
+
+   ```bash
+   docker pull mongo:latest
+   ```
+
+   After pulling the image, you can run a MongoDB container with the following command:
+
    ```bash
    docker run -d --name mongodb -p 27017:27017 mongo:latest --noauth
-   
+   ```
+
 4. **Frontend Setup:**
 
    ```bash
@@ -75,7 +84,7 @@ Make sure you have the following installed:
    ```
 
    Start the React frontend:
- 
+
    ```bash
    cd rule-engine
    npm start
@@ -86,20 +95,19 @@ Make sure you have the following installed:
 - **Create a rule**: Define and save rules using a logical expression.
 - **Evaluate rules**: Evaluate user data against defined rules and get eligibility results.
 
-
 ## Directory Structure
 
     rule-engine/
     ├── backend/
     │   ├── models/
     │   │    ├──Rule.js
-    │   │    └──User.js 
+    │   │    └──User.js
     │   ├── node_module
     │   ├── routes/
     │   │   └── rules.js
     │   │──app.js
     │   │──package.json
-    │   ├──package-lock.json 
+    │   ├──package-lock.json
     src/
     ├── components/
     │   ├── RuleEvaluator.js
@@ -108,7 +116,6 @@ Make sure you have the following installed:
     ├── index.js
     ├── index.css
     └── App.css
-
 
 ## Contact
 
