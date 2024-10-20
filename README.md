@@ -30,7 +30,6 @@ A **Rule Engine** application that allows you to define and evaluate rules again
 - **Database**: MongoDB
 - **Other**: Mongoose, Cors, Body-Parser
 
-
 ## Installation
 
 ### Prerequisites
@@ -40,11 +39,30 @@ Make sure you have the following installed:
 - Node.js (>=14)
 - MongoDB
 
-
 ### Setup
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/rule-engine.git
+   git clone https://github.com/yasar56/rule-engine.git
    cd rule-engine
+   ```
+
+2. **Backend Setup:**
+   ```bash
+   cd backend
+   npm install
+   ```
+3. **Frontend Setup:**
+
+   ```bash
+   cd rule-engine
+   npm install
+   ```
+
+4. **Start the application:**
+
+   ```bash
+   cd backend
+   npm start
+   ```
