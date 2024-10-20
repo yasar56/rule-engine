@@ -1,9 +1,7 @@
-// backend/routes/rules.js
 const express = require('express');
 const router = express.Router();
 const Rule = require('../models/Rule');
 
-// Helper function to create AST from a rule string
 function create_rule(rule_string) {
     const operators = {
         'AND': 'operator',
@@ -13,7 +11,7 @@ function create_rule(rule_string) {
         '=': 'operand',
     };
 
-    const tokens = rule_string.match(/\w+|\S/g); // Tokenize the rule string
+    const tokens = rule_string.match(/\w+|\S/g); 
     const stack = [];
 
     tokens.forEach(token => {
@@ -28,13 +26,13 @@ function create_rule(rule_string) {
         }
     });
 
-    return stack[0]; // Return the root node of the AST
+    return stack[0]; 
 }
 
 // API to create a new rule and generate the AST
 router.post('/', async (req, res) => {
     const { rule_string } = req.body;
-    const ast = create_rule(rule_string); // Create AST from rule string
+    const ast = create_rule(rule_string); 
     const rule = new Rule({ ruleString: rule_string, ast });
     await rule.save();
     res.status(201).json(rule);
@@ -43,7 +41,7 @@ router.post('/', async (req, res) => {
 // API to evaluate a rule against user data
 router.post('/evaluate', (req, res) => {
     const { ast, data } = req.body;
-    const result = evaluate_rule(ast, data); // Implement evaluate_rule function
+    const result = evaluate_rule(ast, data);
     res.status(200).json({ eligible: result });
 });
 

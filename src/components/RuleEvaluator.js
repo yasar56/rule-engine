@@ -8,7 +8,7 @@ const RuleEvaluator = ({ onEvaluate }) => {
     salary: "",
     experience: "",
   });
-  const [evaluationResults, setEvaluationResults] = useState([]); // State to hold evaluation results
+  const [evaluationResults, setEvaluationResults] = useState([]); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,11 +22,10 @@ const RuleEvaluator = ({ onEvaluate }) => {
         "http://localhost:5000/api/evaluate_rule",
         { userData }
       );
-      onEvaluate(response.data); // Assuming the response data contains evaluation results
-      setEvaluationResults(response.data); // Store evaluation results for display
+      onEvaluate(response.data); 
+      setEvaluationResults(response.data); 
     } catch (error) {
       console.error("Error evaluating the rule:", error);
-      // You might want to handle errors (e.g., showing a message to the user)
     }
   };
 

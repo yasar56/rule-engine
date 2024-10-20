@@ -16,7 +16,7 @@ const RuleForm = ({ onAddRule, rules }) => {
 
 
       onAddRule(response.data);
-      setRuleString(""); // Clear the input field after submission
+      setRuleString(""); 
     }
   };
 

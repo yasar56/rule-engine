@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/rule-engine', {
 // Rule schema
 const ruleSchema = new mongoose.Schema({
     rule_string: { type: String, required: true },
-    ast: Object,  // You can define this more specifically based on your AST structure
+    ast: Object,  
 });
 
 const Rule = mongoose.model('Rule', ruleSchema);
@@ -30,7 +30,7 @@ const Rule = mongoose.model('Rule', ruleSchema);
 const createAST = (ruleString) => {
     if (!ruleString || typeof ruleString !== 'string') {
         console.error('Invalid rule string:', ruleString);
-        return null;  // Return null if the rule string is invalid
+        return null; 
     }
 
     const trimmedRule = ruleString.trim();
@@ -42,22 +42,22 @@ const createAST = (ruleString) => {
             const [field, value] = trimmedRule.split(operator).map(part => part.trim());
             if (!field || !value) {
                 console.error('Error parsing rule string:', trimmedRule);
-                return null;  // Return null if parsing fails
+                return null;  
             }
             return {
                 type: 'operand',
-                value: `${field} ${operator} ${value}`,  // Keep the structure simple
+                value: `${field} ${operator} ${value}`,  
             };
         }
     }
 
     console.error('No valid AST could be created for:', ruleString);
-    return null;  // Return null if no valid AST can be created
+    return null;  
 };
 
 // Evaluate rules based on AST and user data
 const evaluateRule = (ast, data) => {
-    if (!ast) return false; // Handle case where AST is null
+    if (!ast) return false; 
 
     switch (ast.type) {
         case 'operand':
@@ -67,7 +67,7 @@ const evaluateRule = (ast, data) => {
 
             if (userValue === undefined) {
                 console.error('Field does not exist in user data:', field);
-                return false;  // Field does not exist, cannot evaluate
+                return false;  
             }
 
             switch (operator) {
@@ -76,7 +76,7 @@ const evaluateRule = (ast, data) => {
                 case '<':
                     return userValue < parsedVal;
                 case '=':
-                    return userValue == parsedVal; // use loose equality for string comparison
+                    return userValue == parsedVal; 
                 case '>=':
                     return userValue >= parsedVal;
                 case '<=':
@@ -112,15 +112,15 @@ app.get('/api/rules', async (req, res) => {
 // API to evaluate rules based on user data
 app.post('/api/evaluate_rule', async (req, res) => {
     const { userData } = req.body;
-    console.log('Received user data:', userData); // Log for debugging
+    console.log('Received user data:', userData); 
 
     try {
         const rules = await Rule.find();
         const results = rules.map(rule => {
-            const ast = createAST(rule.rule_string); // Generate AST from rule string
+            const ast = createAST(rule.rule_string); 
             return {
                 rule: rule.rule_string,
-                isEligible: evaluateRule(ast, userData), // Evaluate rule against user data
+                isEligible: evaluateRule(ast, userData), 
             };
         });
         res.json(results);

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import RuleForm from "./components/RuleForm";
-import RuleEvaluator from "./components/RuleEvaluator"; // Import the RuleEvaluator component
+import RuleEvaluator from "./components/RuleEvaluator"; 
 import axios from "axios";
-import "./App.css"; // Optional styling
+import "./App.css";
 
 const App = () => {
   const [rules, setRules] = useState([]);
-  const [evaluationResults, setEvaluationResults] = useState([]); // State to hold evaluation results
+  const [evaluationResults, setEvaluationResults] = useState([]); 
 
   useEffect(() => {
     const fetchRules = async () => {
@@ -22,7 +22,7 @@ const App = () => {
   };
 
   const handleEvaluate = (results) => {
-    setEvaluationResults(results); // Update evaluation results state
+    setEvaluationResults(results); 
   };
 
   return (
@@ -35,29 +35,7 @@ const App = () => {
         <div className="col-6">
           <RuleEvaluator onEvaluate={handleEvaluate} />{" "}
         </div>
-        {/* Include the RuleEvaluator */}
-        {/* <h2>Rules List</h2> */}
-        {/* {rules.length > 0 ? (
-          <ul>
-            {rules.map((rule) => (
-              <li key={rule._id}>{rule.rule_string}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No rules created yet.</p>
-        )} */}
-        {/* <h2>Evaluation Results</h2>
-        {evaluationResults.length > 0 ? (
-          <ul>
-            {evaluationResults.map((result, index) => (
-              <li key={index}>
-                {result.rule}: {result.isEligible ? "Eligible" : "Not Eligible"}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No evaluation results available.</p>
-        )} */}
+      
       </div>
     </div>
   );
