@@ -63,6 +63,8 @@ Make sure you have the following installed:
 
 4. **Start the application:**
 
+    ## Start the backend server:
+
    ```bash
    cd backend
    npm start
