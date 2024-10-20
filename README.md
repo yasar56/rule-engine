@@ -54,14 +54,20 @@ Make sure you have the following installed:
    cd backend
    npm install express body-parser mongoose cors
    ```
-3. **Frontend Setup:**
+# Running MongoDB in Docker without Authentication
+
+3. Pull and run the MongoDB Docker image:
+   ```bash
+   docker run -d --name mongodb -p 27017:27017 mongo:latest --noauth
+   
+4. **Frontend Setup:**
 
    ```bash
    cd rule-engine
    npm install
    ```
 
-4. **Start the application:**
+5. **Start the application:**
    Start the backend server:
 
    ```bash
