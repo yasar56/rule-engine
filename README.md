@@ -54,9 +54,8 @@ Make sure you have the following installed:
    cd backend
    npm install express body-parser mongoose cors
    ```
-# Running MongoDB in Docker without Authentication
-
-3. Pull and run the MongoDB Docker image:
+4. **Running MongoDB in Docker without Authentication**
+    Pull and run the MongoDB Docker image:
    ```bash
    docker run -d --name mongodb -p 27017:27017 mongo:latest --noauth
    
