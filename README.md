@@ -36,8 +36,8 @@ A **Rule Engine** application that allows you to define and evaluate rules again
 
 Make sure you have the following installed:
 
-- Node.js (>=14)
-- MongoDB
+- [Node.js](https://nodejs.org/) (which includes npm)
+- [MongoDB](https://www.mongodb.com/products/tools/compass)
 
 ### Setup
 
@@ -105,11 +105,9 @@ Make sure you have the following installed:
     └── App.css
 
 
-### Contributing
-Feel free to contribute to the project:
+## Contact
 
-- Fork the repository.
-- Create a feature branch (git checkout -b feature-branch).
-- Make changes and commit (git commit -m 'Add feature').
-- Push to the branch (git push origin feature-branch).
-- Open a Pull Request.
+#### For any inquiries or support, please contact:
+
+- Mohamed Javed Yasar
+- Email: yasarm0024@gmail.com
