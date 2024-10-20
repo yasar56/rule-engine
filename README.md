@@ -54,7 +54,15 @@ Make sure you have the following installed:
    cd backend
    npm install express body-parser mongoose cors
    ```
-3. **Running MongoDB in Docker without Authentication:**
+
+3. **Frontend Setup:**
+
+   ```bash
+   cd rule-engine
+   npm install
+   ```
+
+4. **Running MongoDB in Docker without Authentication:**
 
    To pull the latest MongoDB image from Docker Hub, run the following command in your terminal:
 
@@ -68,7 +76,7 @@ Make sure you have the following installed:
    docker run -d --name mongodb -p 27017:27017 mongo:latest --noauth
    ```
 
-4. **Start the application:**
+5. **Start the application:**
    Start the backend server:
 
    ```bash
@@ -83,12 +91,6 @@ Make sure you have the following installed:
    npm start
    ```
 
-5. **Frontend Setup:**
-
-   ```bash
-   cd rule-engine
-   npm install
-   ```
 
 ### Usage
 
