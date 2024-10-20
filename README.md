@@ -2,17 +2,6 @@
 
 A **Rule Engine** application that allows you to define and evaluate rules against dynamic user data. The application supports logical conditions using a simple syntax to define rules, stores them in MongoDB, and evaluates them using an Abstract Syntax Tree (AST).
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - Define rules with logical operators (`AND`, `OR`) and comparison operators (`>`, `<`, `=`, `>=`, `<=`).
