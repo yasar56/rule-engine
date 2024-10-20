@@ -68,14 +68,7 @@ Make sure you have the following installed:
    docker run -d --name mongodb -p 27017:27017 mongo:latest --noauth
    ```
 
-4. **Frontend Setup:**
-
-   ```bash
-   cd rule-engine
-   npm install
-   ```
-
-5. **Start the application:**
+4. **Start the application:**
    Start the backend server:
 
    ```bash
@@ -88,6 +81,13 @@ Make sure you have the following installed:
    ```bash
    cd rule-engine
    npm start
+   ```
+
+5. **Frontend Setup:**
+
+   ```bash
+   cd rule-engine
+   npm install
    ```
 
 ### Usage
