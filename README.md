@@ -62,10 +62,16 @@ Make sure you have the following installed:
    ```
 
 4. **Start the application:**
-
-    ## Start the backend server:
+   Start the backend server:
 
    ```bash
    cd backend
+   node app.js
+   ```
+
+   Start the React frontend:
+ 
+   ```bash
+   cd rule-engine
    npm start
    ```
